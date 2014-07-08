@@ -1,7 +1,7 @@
 module Lotus
   module Model
-    module Mongodb
-      module Adapter
+    module Adapters
+      module Mongodb
         VERSION = "0.0.1"
       end
     end

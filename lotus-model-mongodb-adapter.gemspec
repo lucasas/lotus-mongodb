@@ -1,11 +1,11 @@
 # coding: utf-8
 lib = File.expand_path('../lib', __FILE__)
 $LOAD_PATH.unshift(lib) unless $LOAD_PATH.include?(lib)
-require 'lotus/model/mongodb/adapter/version'
+require 'lotus/model/adapters/version'
 
 Gem::Specification.new do |spec|
   spec.name          = "lotus-model-mongodb-adapter"
-  spec.version       = Lotus::Model::Mongodb::Adapter::VERSION
+  spec.version       = Lotus::Model::Adapters::Mongodb::VERSION
   spec.authors       = ["Lucas Souza"]
   spec.email         = ["lucasas@gmail.com"]
   spec.summary       = %q{MongoDB lotus-model adapter}
