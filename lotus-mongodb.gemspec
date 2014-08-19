@@ -4,12 +4,12 @@ $LOAD_PATH.unshift(lib) unless $LOAD_PATH.include?(lib)
 require 'lotus/model/adapters/version'
 
 Gem::Specification.new do |spec|
-  spec.name          = "lotus-model-mongodb-adapter"
+  spec.name          = "lotus-mongodb"
   spec.version       = Lotus::Model::Adapters::Mongodb::VERSION
   spec.authors       = ["Lucas Souza"]
   spec.email         = ["lucasas@gmail.com"]
   spec.summary       = %q{MongoDB lotus-model adapter}
-  spec.homepage      = "http://githucb.com/lucasas/lotus-model-mongodb-adapter"
+  spec.homepage      = "http://github.com/lucasas/lotus-mongodb"
   spec.license       = "MIT"
 
   spec.files         = `git ls-files -z`.split("\x0")
