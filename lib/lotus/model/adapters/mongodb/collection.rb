@@ -8,13 +8,22 @@ module Lotus
           end
 
           def insert(entity)
-            @connection[@collection.name].insert(_serialize(entity))
+            _id = @connection[@collection.name].insert(_serialize(entity))
+          end
+
+          def find(id)
+            document = @connection[@collection.name].find_one(id)
+            _deserialize(document).first
           end
 
           private
 
           def _serialize(entity)
             @collection.serialize(entity)
+          end
+
+          def _deserialize(*documents)
+            @collection.deserialize(documents)
           end
         end
       end

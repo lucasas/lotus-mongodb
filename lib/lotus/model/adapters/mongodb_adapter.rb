@@ -1,4 +1,5 @@
-require 'moped'
+require 'mongo'
+require 'lotus/model/adapters/abstract'
 require 'lotus/model/adapters/implementation'
 require 'lotus/model/adapters/mongodb/command'
 require 'lotus/model/adapters/mongodb/collection'
@@ -6,16 +7,27 @@ require 'lotus/model/adapters/mongodb/collection'
 module Lotus
   module Model
     module Adapters
-      class MongodbAdapter
+      class MongodbAdapter < Abstract
         include Implementation
+        include Mongo
 
-        def initialize(mapper, uris, database)
-          @mapper, @connection = mapper, Moped::Session.new(uris)
-          @connection.use(database)
+        attr_reader :connection
+
+        def initialize(mapper, options = {})
+          super(mapper)
+
+          @connection = MongoClient.new(
+            options.fetch(:host, 'localhost'),
+            options.fetch(:port, 27017)
+          )[options.fetch(:database)]
         end
 
         def create(collection, entity)
           _command(collection).create(entity)
+        end
+
+        def find(collection, id)
+          _command(collection).find(id)
         end
 
         private

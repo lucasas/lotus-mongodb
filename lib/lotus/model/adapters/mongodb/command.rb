@@ -10,6 +10,10 @@ module Lotus
           def create(entity)
             @collection.insert(entity)
           end
+
+          def find(id)
+            @collection.find(id)
+          end
         end
       end
     end

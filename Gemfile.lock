@@ -1,23 +1,22 @@
 PATH
   remote: .
   specs:
-    lotus-model-mongodb-adapter (0.0.1)
-      moped
+    lotus-mongodb (0.0.1)
+      bson_ext
+      mongo (~> 1.10.2)
 
 GEM
   remote: https://rubygems.org/
   specs:
-    bson (2.3.0)
-    connection_pool (2.0.0)
+    bson (1.10.2)
+    bson_ext (1.10.2)
+      bson (~> 1.10.2)
     lotus-model (0.1.2)
       lotus-utils (~> 0.2)
       sequel (~> 4.9)
     lotus-utils (0.2.0)
-    moped (2.0.0)
-      bson (~> 2.2)
-      connection_pool (~> 2.0)
-      optionable (~> 0.2.0)
-    optionable (0.2.0)
+    mongo (1.10.2)
+      bson (= 1.10.2)
     rake (10.3.2)
     sequel (4.12.0)
 
@@ -27,5 +26,5 @@ PLATFORMS
 DEPENDENCIES
   bundler (~> 1.6)
   lotus-model
-  lotus-model-mongodb-adapter!
+  lotus-mongodb!
   rake
