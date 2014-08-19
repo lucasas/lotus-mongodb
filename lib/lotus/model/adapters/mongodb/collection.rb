@@ -8,7 +8,7 @@ module Lotus
           end
 
           def insert(entity)
-            _id = @connection[@collection.name].insert(_serialize(entity))
+            entity.id = _id = @connection[@collection.name].insert(_serialize(entity))
           end
 
           def find(id)
