@@ -1,8 +1,10 @@
 require 'mongo'
+require 'bson'
 require 'lotus/model/adapters/abstract'
 require 'lotus/model/adapters/implementation'
 require 'lotus/model/adapters/mongodb/command'
 require 'lotus/model/adapters/mongodb/collection'
+require 'lotus/model/adapters/mongodb/coercer'
 
 module Lotus
   module Model

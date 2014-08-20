@@ -8,13 +8,13 @@ describe Lotus::Model::Adapters::MongodbAdapter do
   end
 
   let(:mapper) do
-    Lotus::Model::Mapper.new do
+    Lotus::Model::Mapper.new(Lotus::Model::Mapping::MongodbCoercer) do
       collection :users do
         entity DummyUser
 
-        attribute :id, String
+        attribute :id,   String
         attribute :name, String
-        attribute :age, Integer
+        attribute :age,  Integer
       end
     end.load!
   end
